@@ -28,17 +28,17 @@ window.onload=function () {
 
         //Sin 曲线属性
         var sinParam1={
-            sinY:0,                       //y轴偏移量
             sinX : -radius,               //起始点x
-            axisLength : 2*radius,        //轴长
+            sinY:0,                       //y轴偏移量
+            axisLength : 2*radius,       //轴长
             palstance : 0.015 ,     //波浪宽度,数越小越宽(角速度)
             amplitude :10,         //波浪高度,数越大越高(振幅)
             speed :0.06,            //波浪速度，数越大速度越快
             xOffset: 0              //波浪x偏移量（初相）
         }
         var sinParam2={
-            sinY:0,                       //y轴偏移量
-            sinX : -radius,               //起始点x
+            sinX : -radius,                 //起始点x
+            sinY:3,                         //y轴偏移量
             axisLength : 2*radius,        //轴长
             palstance : 0.01 ,     //波浪宽度,数越小越宽(角速度)
             amplitude :10,         //波浪高度,数越大越高(振幅)
@@ -69,7 +69,7 @@ window.onload=function () {
             ctx.fill();
             ctx.restore();
         };
-        //动画
+        //绘制动画
         var t;
         function draw() {
             clearTimeout(t);
