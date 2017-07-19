@@ -28,7 +28,7 @@ window.onload=function () {
 
         //Sin 曲线属性
         var sinParam1={
-            range:0,             //波浪的高度(占画布高的百分比，用来计算y轴位移)
+            sinY:0,                       //y轴偏移量
             sinX : -radius,               //起始点x
             axisLength : 2*radius,        //轴长
             palstance : 0.015 ,     //波浪宽度,数越小越宽(角速度)
@@ -37,8 +37,8 @@ window.onload=function () {
             xOffset: 0              //波浪x偏移量（初相）
         }
         var sinParam2={
-            range:3, //波浪的高度(占画布高的百分比，用来计算y轴位移)
-            sinX : -radius,   //起始点x
+            sinY:0,                       //y轴偏移量
+            sinX : -radius,               //起始点x
             axisLength : 2*radius,        //轴长
             palstance : 0.01 ,     //波浪宽度,数越小越宽(角速度)
             amplitude :10,         //波浪高度,数越大越高(振幅)
@@ -57,7 +57,7 @@ window.onload=function () {
             //在整个轴长上取点
             for(var x = sinParam.sinX; x < sinParam.sinX + sinParam.axisLength; x++){
                 //y=振幅*sin(x*角速度 + 振幅偏移量)+y轴偏移量
-                var y=sinParam.amplitude*Math.sin(x*sinParam.palstance+sinParam.xOffset)+sinParam.range;
+                var y=sinParam.amplitude*Math.sin(x*sinParam.palstance+sinParam.xOffset)+sinParam.sinY;
                 ctx.lineTo(x, y);
             }
 
