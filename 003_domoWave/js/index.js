@@ -58,8 +58,9 @@ window.onload=function () {
             ctx.beginPath();
             //在整个轴长上取点
             for(var x = sinParam.sinX; x < sinParam.sinX + sinParam.axisLength; x++){
-                //y=振幅*sin(x*角速度 + 振幅偏移量)+y轴偏移量
-                var y=sinParam.amplitude*Math.sin(x*sinParam.palstance+sinParam.xOffset)+sinParam.sinY;
+                //y=振幅*sin(x*角速度 + 振幅偏移量)+y轴偏移量         
+                var y=Math.floor(sinParam.amplitude*Math.sin(x*sinParam.palstance+sinParam.xOffset)+sinParam.sinY);                    
+
                 ctx.lineTo(x, y);
             }
 
