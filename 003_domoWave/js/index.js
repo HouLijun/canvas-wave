@@ -23,7 +23,7 @@ window.onload=function () {
             ctx.arc(0, 0, r-10, 0, 2 * Math.PI);
             ctx.closePath();
             ctx.restore();
-            // ctx.clip();
+            ctx.clip();
         }
 
         //Sin 曲线属性
