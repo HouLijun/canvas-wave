@@ -53,7 +53,7 @@ window.onload=function () {
         //绘制sin曲线
         function drawSin(sinParam,color){
             ctx.save();
-            //画笔移到中心点
+            //原点移到中心点
             ctx.translate(cw/2,ch/2);
             ctx.beginPath();
             //在整个轴长上取点
