@@ -10,15 +10,17 @@ window.onload=function () {
         var radius=150;
 
         //圆
-        function outsideCircle(r) {
+        function circle(r) {
             ctx.save();
             ctx.translate(cw/2,ch/2);
             ctx.beginPath();
             ctx.strokeStyle = '#fff';
             ctx.lineWidth=5;
+            //外圆
             ctx.arc(0, 0, r, 0, 2 * Math.PI);
             ctx.stroke();
             ctx.closePath();
+            //内圆
             ctx.beginPath();
             ctx.arc(0, 0, r-10, 0, 2 * Math.PI);
             ctx.closePath();
@@ -74,7 +76,7 @@ window.onload=function () {
         function draw() {
             clearTimeout(t);
             ctx.clearRect(0, 0, cw, ch);
-            outsideCircle(radius);
+            circle(radius);
             drawSin(sinParam1,"#96b4d3");
             drawSin(sinParam2,"rgba(94,150,202,0.8)");
             sinParam1.xOffset -= sinParam1.speed;
